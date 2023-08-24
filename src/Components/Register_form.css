@@ -1,0 +1,111 @@
+.Register_form{
+    position:fixed;
+    top:25vh;
+     z-index:50;
+    left:50%;
+    transform: translateX(-50%);
+    background:white;
+    width:clamp(50px,25vw,250px);
+    height:clamp(50px,25vw,250px);
+    @apply flex flex-col items-center py-2 justify-between  rounded-lg shadow-lg ;
+}
+.Register_form>div{
+  width:90%;
+    @apply flex flex-col items-center    ;
+}
+.Register_form>div>input{
+  
+    font-size:clamp(0px,1.2vw,15px);
+    width:100%;
+    margin-bottom:5%;
+}
+.Register_form>div>button{
+  
+    font-size:clamp(0px,1.2vw,15px);
+    width:100%;
+    margin-bottom:5%;
+    background:#DA5353;
+    color:white;
+    
+    padding:2% 0px;
+    @apply w-full duration-500;
+}
+.Register_form>div>button:hover{
+   background:#E96464;
+}
+.Cls_Bck_btns>h3{
+   font-size:clamp(0px,1.8vw,20px);
+   font-weight:600;
+   
+}
+.singleDecks {
+    padding:4px 15px;
+    width:100%;
+    @apply border-2  items-center mb-2;
+
+}
+.singleDecks>p {
+    font-size:clamp(0px,1vw,10px);
+}
+.Mng_Acct{
+    font-size:clamp(0px,1.2vw,10px);
+    
+    
+    @apply  w-full ;
+
+}
+.Cls_Bck_btns{
+margin-bottom:15%;
+@apply  flex justify-between  w-full items-center 
+}
+.Cls_Bck_btns>.Icon>img{
+width:clamp(0px,1.2vw,10px); 
+height:clamp(0px,1.2vw,10px);
+
+}
+.Mng_Acct>p{
+    
+    
+    @apply  text-left w-full;
+    
+}
+
+
+.Mng_Acct>p>.SignIN{
+    color:#DA5353;
+
+}
+
+.Mng_Acct>p>span:hover,.Pssword:hover{
+  @apply underline;
+
+}
+.singleDecks>img {
+    margin-right:20%;
+    width:10%;
+}
+
+@media(max-width:600px){
+    .Cls_Bck_btns{
+         
+        @apply  flex justify-between  w-full items-center 
+        }
+    .Mng_Acct{
+        font-size:clamp(0px,.8vw,10px);     
+    
+    
+    }
+    .Register_form{
+      
+    height:clamp(50px,35vw,300px);
+        @apply py-1 ;
+    }
+    .singleDecks>p {
+        font-size:clamp(0px,.8vw,10px);
+    }
+    .singleDecks>img {
+      width:8%;
+    @apply mr-2;
+    }
+
+}

@@ -1,0 +1,127 @@
+.Hme_Section{
+  position:absolute;
+  top:105vh;
+  padding-top:90px;
+  margin-bottom:0px;
+  @apply w-full  ;
+}
+.Reviews_Card{
+    background:#EBEBEB;
+    width:clamp(0px,30%,300px);
+    padding:clamp(0px,5vw,25px);
+    @apply flex flex-col items-center justify-between;
+}
+.Reviews_Card>.txt>h3{
+    font-weight:600;
+    font-size:clamp(0px,1.5vw,20px)
+}
+.Reviews_Card>.txt>p{
+    font-weight:400;   
+   font-size:clamp(0px,.8vw,15px)
+}
+.Reviews_container{
+    padding:100px 15%;
+    @apply  w-full mb-24;
+}
+.Reviews_Card>img{
+    width:clamp(0px,10vw,100px);
+    height:clamp(0px,10vw,100px);
+    margin-bottom:50%;
+    @apply rounded-full object-cover ;
+}
+.Rvline{
+    width:50%;
+    height:3px;
+    background:#DA5353;
+    
+}
+.Title{
+    font-size:clamp(0px,2.5vw,80px);
+    color:#DA5353;
+    @apply flex flex-col items-center ;
+}
+.Contact{
+    background:#E6E6E6;
+    width:clamp(0px,100%,600px);
+   
+    @apply   flex flex-col items-center w-full py-8 pb-12;
+}
+.Contact>input{
+    width:90%;
+    height:clamp(0px,1vw,50px);
+    
+    font-size:clamp(0px,1.5vw,20px);
+    @apply my-2 p-4 outline-none;
+}
+.Contact>textarea{
+    font-size:clamp(0px,1.5vw,20px);
+    width:90%;
+    height:32vh;
+    @apply my-2 mb-5 pt-3 px-4 outline-none;
+}
+.Before_contact{
+    padding:5% 15%;
+    margin-bottom:15%;
+    @apply w-full ;
+}
+.Contact_Icons{
+    width:90%;
+    @apply flex justify-center items-center;
+
+}
+.Contact_Icons>div{
+    
+    @apply flex flex-col items-center  justify-center;
+
+}
+.Contact_Icons>div>p{
+    font-size:clamp(0px,1vw,15px)
+
+}
+.Contact_Icons>div>p>span{
+    color:#DA5353;
+
+}
+.Contact_Icons>div>img{
+   width:2vw;
+
+}
+/* .Hmfoot{
+    position:absolute;
+    top:280vh;
+} */
+
+
+@media (max-width:600px){
+    .Contact{
+        @apply    py-3;
+    }
+    .Contact>input{
+        width:90%;
+        height:clamp(0px,1vw,50px);
+        
+        font-size:clamp(0px,1.5vw,20px);
+        @apply my-2 p-1 outline-none;
+    }
+    .Contact>textarea{
+        font-size:clamp(0px,1.5vw,20px);
+        width:90%;
+        height:10vh;
+        @apply my-2 mb-5 pt-3 px-1 outline-none;
+    }
+    .Hme_Section{
+        position:absolute;
+        top:105vh;
+        padding-top:0px;
+        @apply w-full  ;
+      }
+
+}
+@media (max-height:600px){
+    .Hmfoot{
+        position:absolute;
+        top:300vh;
+    }
+    
+
+}

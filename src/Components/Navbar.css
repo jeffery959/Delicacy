@@ -1,0 +1,92 @@
+.Navbar{
+    padding: 30px 15%;
+    transition-duration:2s;
+    position:fixed;
+    top:0;
+    @apply flex justify-between  items-center w-full z-50;
+  }
+  .SelectiveNav{
+    background:#DA5353;
+    
+  }
+  .Navbar>img{
+    width:clamp(2px,20%,150px);
+  }
+  .Navbar>ul{
+    max-width:600px;
+    
+    @apply flex text-xl  w-1/2 justify-between items-center text-black;
+  }
+  .Navbar>ul>li{
+    color:white;
+    position: relative;
+    font-size:clamp(0px,1.5vw, 20px);
+  }
+
+  .Navbar>ul>.Sign>img{
+    color:white;
+    position: relative;
+    width:clamp(0px,1.8vw, 25px);
+  }
+  .Navbar>ul>.Sign{
+    color:white;
+  }
+  .Navbar>ul>li::before{
+  content: '';
+  position: absolute;
+  bottom: 7%;
+  left: 0;
+  height: 2px; 
+  width: 0px; 
+  background-color: white; 
+  transition: width 0.3s;
+  
+  }
+
+  .Active::before{
+  content: '';
+  position: absolute;
+  bottom: 7%;
+  left: 0;
+  height: 2px; /* Initial height of the underline */
+  width: 100%; /* Initially hidden */
+  background-color: white; /* Underline color */
+  transition: width 0.3s;
+  }
+
+  .Navbar>ul>*:hover::before {
+    width: 100%; /* Make the underline extend to 100% on hover */
+  }
+
+  @media (hover: none){
+    .Active::before{
+      content: '';
+      position: absolute;
+      bottom: 7%;
+      left: 0;
+      height: 2px; /* Initial height of the underline */
+      width: 0%; /* Initially hidden */
+      background-color: white; /* Underline color */
+      transition: width 0.3s;
+    }
+    .Active{
+      border-bottom:3px solid white;
+      }
+      .Navbar>ul>*:hover::before {
+        width: 0%; /* Make the underline extend to 100% on hover */
+      }
+      
+  }
+  
+  
+  @media (max-width:450px){
+    .Navbar{
+
+      padding: 20px 15%;
+    }
+    .Active{
+      border-bottom:2px solid white;
+    }
+    
+    
+  }

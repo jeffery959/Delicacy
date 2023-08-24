@@ -1,0 +1,25 @@
+.SignIn{
+    position:absolute;
+    top:70%;
+    right:15.5%;
+    background:white;
+    width:clamp(40px,10vw,150px);
+    height:clamp(40px,10vw,70px);
+    padding:4px 0px;
+    @apply rounded-md shadow-md flex flex-col items-center justify-center  ;
+}
+.SignIn>div{
+    margin:2px 0px;
+}
+.SignIn>button,.SignIn>p{
+    font-size:clamp(0px,1.2vw,12px);
+    height:clamp(15px,2vw,62px);
+    font-weight:700;
+    @apply  duration-700 text-center text-gray-600 flex justify-center items-center ;
+   
+}
+.SignIn>button:hover{
+    background:rgba(0,0,0,.15);
+    @apply rounded-md;
+   
+}

@@ -1,0 +1,36 @@
+footer{
+    background:#DA5353;
+    padding:35px 15%;
+    margin-top:0px;
+    width:100vw;
+    @apply flex justify-between  ;
+}
+footer>div{
+    color:white;
+    @apply  flex justify-between items-start flex-col mb-2  ;
+}
+footer>div>*{
+    font-size:clamp(0px,1.2vw,20px);
+    @apply mb-2;
+}
+footer>.Last>button{
+    font-size:clamp(0px,1.2vw,15px);
+    font-weight:600;
+    background:white;
+    color:#DA5353;
+    padding:clamp(0px,5%,10px);
+    padding-left:clamp(0px,25%,50px);
+    padding-right:clamp(0px,25%,50px);
+    @apply mb-2;
+}
+footer>.Last>div{
+    font-weight:600;
+    color:#DA5353;
+    width:clamp(0px,10vw,85px);
+    @apply flex justify-between  outline;
+}
+footer>.Last>div>img{
+    width:clamp(0px,2vw,20px);
+    @apply mt-2;
+   
+}

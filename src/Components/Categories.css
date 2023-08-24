@@ -1,0 +1,21 @@
+.Categories>ul{
+      font-weight: 600;
+      color:#FF0000;
+      font-size:clamp(5px,1.5vw,20px);
+      margin-top:clamp(0px,5vh,40px);
+    
+    @apply flex justify-between  w-full ;
+}
+.Categories>ul>*{
+      color:#DA5353;
+    @apply cursor-pointer;
+}
+.Categories{
+  padding:0 15%;
+  @apply flex  flex-col  mt-32  items-center ;
+
+}                   
+.Categories>h3{  
+ color:#DA5353;
+ font-size:clamp(0px,3vw,40px)
+    }

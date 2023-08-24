@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Ephesis&display=swap');
+
+
+.Banner>img{
+    @apply absolute w-screen top-0 -z-10 h-screen object-cover;
+}
+.Banner>div{
+    padding:0 15%;
+    position:relative;
+    top:clamp(0px,40vh,1200px);
+    
+   @apply w-full flex justify-between;
+}
+.Banner>p{
+    font-family: 'Ephesis', cursive;
+    position:relative;
+    top:clamp(0px,35vh, 90vh);
+    width:12ch;
+    font-size:clamp(0px,6vw, 100px);
+    
+    margin-left:15%;
+    @apply  text-white;
+}
+.Ratings{
+    width:clamp(0px,17%,200px);
+    height:clamp(0px,17vh,145px);
+@apply  bg-white rounded-lg flex flex-col justify-around pb-3 items-center;
+}
+.smStar{
+    width:clamp(0px,10%,150px);
+}
+.Ratings>div>p{
+    font-size:clamp(0px,1vw,10px);
+    
+}
+.Ratings>img{
+    width:clamp(0px,7vw,100px);
+    height:clamp(0px,7vw,100px);
+@apply  shadow-lg rounded-full relative  bottom-8 object-cover;
+}
+
+@media (max-width:900px){
+    .Banner>p{
+        top:clamp(340px,45vh, 90vh);
+    }
+    .Banner>div{
+        position:relative;
+        top:clamp(0px,55vh,1200px);
+     
+    }
+    .Ratings>img{
+        width:clamp(0px,6vw,70px);
+        height:clamp(0px,6vw,70px);
+        @apply   relative  bottom-4;
+    }
+    .Ratings{
+        width:clamp(0px,17%,150px);
+        height:clamp(0px,10vh,145px);
+   
+    }
+}
+@media (max-width:450px){
+    .Ratings>img{
+        width:clamp(0px,6vw,70px);
+        height:clamp(0px,6vw,70px);
+        @apply   relative  bottom-3;
+    }
+    .Ratings{
+        width:clamp(0px,17%,150px);
+        height:clamp(0px,8vh,145px);
+   
+    }
+  
+}
+@media (max-height:750px ){
+    .Banner>p{
+        top:clamp(250px,25vh, 90vh);
+    }
+    .Banner>div{
+        position:relative;
+        top:clamp(0px,50vh,1200px);
+     
+    }
+    .Ratings>img{
+        width:clamp(0px,6vw,70px);
+        height:clamp(0px,6vw,70px);
+        @apply   relative  bottom-2;
+    }
+    .Ratings{
+        width:clamp(0px,17%,150px);
+        height:clamp(0px,8vh,145px);
+   
+    }
+}
+@media (max-height:600px ){
+    .Banner>p{
+        top:clamp(0px,20vh, 90vh);
+    }
+    .Banner>div{
+        position:relative;
+        top:clamp(0px,25vh,1200px);
+     
+    }
+    .Ratings>img{
+        width:clamp(0px,6vw,70px);
+        height:clamp(0px,6vw,70px);
+        @apply   relative  bottom-4;
+    }
+    .Ratings{
+        width:clamp(0px,17%,150px);
+        height:clamp(0px,8vh,145px);
+   
+}
+.Ratings{
+    width:clamp(0px,17%,150px);
+    height:clamp(0px,20vh,145px);
+
+}
+
+}

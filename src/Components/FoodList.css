@@ -1,0 +1,208 @@
+
+.FoodList {
+  margin-top: clamp(0px, 5vh, 50px);
+  margin-bottom:150px;
+}
+
+.Line {
+  width: 43%;
+  height: clamp(0px, .2vw, 2px);
+  background: #DA5353;
+}
+
+.FoodListNav {
+  padding: 0 15%;
+  @apply flex justify-between items-center;
+}
+
+.FoodListNav > p {
+  font-weight: 600;
+  color: #DA5353;
+  font-size: clamp(0px, 1.6vw, 40px);
+  @apply capitalize;
+}
+
+.FoodList_items {
+  padding: 0 15%;
+  @apply flex justify-between flex-wrap gap-4 mt-10;
+}
+
+.FoodList_items_item {
+  width: 250px;
+  height:320px;
+  background: #DA5353;
+  transition-duration: .4s;
+  @apply flex flex-col items-center relative rounded-md shadow-2xl;
+}
+
+
+.FoodList_items_item >a> div {
+  transition-duration: .6s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;  
+  object-fit: cover;
+  z-index: 1;
+  @apply rounded-md w-full;
+}
+
+
+
+
+.FoodList_items_item_txt {
+  font-weight: 500;
+  color: white;
+  width: 90%;
+  font-size: clamp(0px, .8vw, 10px);
+  height: 30%;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 45%;
+  transition: .5s ease;
+  @apply flex flex-col justify-center mt-2 px-5;
+}
+
+.FoodList_items_item:hover > .FoodList_items_item_txt {
+  position: absolute;
+  top: 35%;
+  background: rgba(0, 0, 0, .4);
+}
+
+.Price {
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.order {
+  font-size: clamp(0px, 2vw, 20px);
+  font-weight: 500;
+  padding: 1%;
+  transition-duration: .5s;
+  background: #FFFFFF;
+  width: 90%;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #DA5353;
+  position: absolute;
+  top: 85%;
+  @apply rounded-sm mb-1 shadow-xl;
+}
+
+.order:hover {
+  background: rgba(255, 255, 255, .5);
+  color: #FFFFFF;
+  width: 60%;
+  transition-duration: .9s ease-in-out;
+}
+
+.FoodList_items_item_txt > div > h3 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: clamp(0px, 1.4vw, 20px);
+  font-weight: 600;
+  color: white;
+  @apply mb-2;
+}
+
+@media (max-width: 700px) {
+  .FoodList_items_item {
+    width: clamp(0px, 45%, 300px);
+    height:200px;
+  }
+}
+
+.BigItem {
+  height: 60vh;
+  background: #DA5353;
+  @apply w-full rounded-md;
+}
+
+.BigItem_img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  @apply rounded-md;
+}
+
+.BigItem_img > div {
+  
+  @apply flex items-center;
+}
+
+.HR-Line {
+  background: #DA5353;
+  width: 6px;
+  height: 90%;
+  @apply mr-1;
+}
+
+.BigItem_img > div > h3 {
+  font-size: clamp(0px, 3vw, 35px);
+  font-weight: 600;
+  @apply text-white;
+}
+
+.Htitle {
+  height: 8%;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.Htitle > h3 > span {
+  color: #DA5353;
+}
+
+.special-shrt-txt {
+  width: 30ch;
+  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: clamp(0px, 1.2vw, 35px);
+}
+
+.special {
+  width: 66%;
+  
+  @apply py-8 rounded-sm  ;
+}
+
+.special-shrt > h3 {
+  font-size: clamp(0px, 1.5vw, 35px);
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  @apply mb-2;
+}
+
+.special-shrt > p {
+  font-size: clamp(0px, 1.2vw, 35px);
+  font-weight: 400;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.Main_special {
+  height: 92%;
+  @apply flex flex-col justify-center w-full;
+}
+
+.Main_special > button {
+  width: 66%;
+  color: #DA5353;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  font-size: clamp(0px, 2vw, 20px);
+  transition-duration: .5s;
+  padding-top: clamp(0px, .5vw, 30px);
+  padding-bottom: clamp(0px, .5vw, 30px);
+  @apply mt-16 rounded-sm shadow-xl;
+}
+
+.Main_special > button:hover {
+  background: rgba(255, 255, 255, .5);
+  color: white;
+  width: 30%;
+  transition-duration: .9s ease-in-out;
+}
+

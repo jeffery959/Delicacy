@@ -1,0 +1,7 @@
+.Modal{
+    height:5vh;
+}
+.Modal>p{
+    font-size:clamp(0px,2.5vw,15px);
+    @apply ml-3;
+}
