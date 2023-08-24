@@ -15,7 +15,7 @@ import { LogInSuccess, LogOut } from './features/counter/signInSlice'
 import axios from 'axios'
 
 
-axios.defaults.baseURL = 'http://localhost:8080/';
+axios.defaults.baseURL = 'https://delicacy-api.onrender.com/';
 
 //Outside Fuction
 const extractBearerToken = () => {
