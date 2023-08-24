@@ -36,7 +36,7 @@
 }
 
 
-.FoodList_items_item >a> div {
+.FoodList_items_item >a> img {
   transition-duration: .6s;
   position: absolute;
   top: 0;

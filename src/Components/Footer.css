@@ -34,3 +34,21 @@ footer>.Last>div>img{
     @apply mt-2;
    
 }
+
+@media (max-width:900px){
+    footer>.Last>button{
+        font-size:clamp(0px,2vw,15px);
+        font-weight:600;
+        @apply mb-2;
+    }
+    footer>div>*{
+        font-size:clamp(0px,2vw,20px);
+        @apply mb-2;
+    }
+    footer>.Last>div>img{
+        width:clamp(0px,3vw,20px);
+      
+       
+    }
+
+}

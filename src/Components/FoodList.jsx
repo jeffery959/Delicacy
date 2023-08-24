@@ -1,10 +1,19 @@
-import React,{ memo,useState}from 'react'
-import { Link } from 'react-router-dom'
+import React,{ Suspense, lazy, memo,useState}from 'react'
+
 import { Add_Order} from '../features/counter/menuSlice'
 import "./FoodList.css"
 import CheckIcon from '@mui/icons-material/Check';
 import { useSelector, useDispatch } from 'react-redux'
+import Loading from '../Pages/Loading';
 
+
+const SingleItem = lazy(() =>
+import('./Single_Item').then(module => ({ default: module.SingleItem }))
+);
+
+const SingBigItem = lazy(() =>
+import('./Single_Item').then(module => ({ default: module.SingBigItem }))
+);
 
 
 const FoodList = ({Menu}) => {
@@ -58,13 +67,16 @@ export const SingularityUse = ({Menu,func}) => {
    {
      Menu.map (( item)=>{
        return (
-       <React.Fragment key={item.id} > 
+         
+         <React.Fragment key={item.id} > 
+         <Suspense fallback={<Loading/>}>
        {item.special?
-       <SingBigItem  {...item} />
+       <SingBigItem {...item} />
        
        :
        <SingleItem {...item} item={item} func={func}/>
       }
+      </Suspense>
        </React.Fragment>
        
        )
@@ -75,55 +87,5 @@ export const SingularityUse = ({Menu,func}) => {
 }
 
 
-const SingleItem = memo(({name,price,Description,img,id,item,func})=>{
- 
-  return(
-    <div  className='FoodList_items_item relative flex  ' >
-<Link to={`/Menu/items/${id}` } >
-  <div style={{backgroundImage: `url(${img})`}}></div>
-   
-</Link>
-  
-   
 
-   <div className='FoodList_items_item_txt z-10  '>
-    <div className='w-full flex items-center justify-between'>
-    <h3>{name}</h3>
-    <p className='Price'>
-     {price}
-    </p>
-    </div>
-    <p>{Description}</p>
-   
-   </div>
-    <button className='order z-10 '  onClick={()=>func(item)}>Order</button>
-
-    </div>
-  );
-})
-const SingBigItem =memo(({name,price,Description,img,id})=>{
-  return (
-    <Link  to={`/Menu/items/${id}` }  className='BigItem p-3'>
-
-      <div className='BigItem_img px-14 py-5' style={{backgroundImage: `url(${img})`}}>
-     
-     <div className='Htitle'>
-     <div className='HR-Line'></div>
-     <h3>Tonights <span>Special Dish</span></h3>
-     </div>
-     <div className='Main_special  '>
-      <div className='  special'>
-     <div className='flex justify-between special-shrt text-white '>
-      <h3>Hamburger</h3>
-      <p>$34</p>
-     </div>
-      <p className='text-white special-shrt-txt'>Grilled ribs coated and longed grilled come and get yours now</p>
-      </div>
-      <button className='bg-white w-full'>Order</button>
-     </div>
-      </div>
-      
-    </Link>
-  )
-})
 export default FoodList

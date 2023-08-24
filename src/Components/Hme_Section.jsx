@@ -16,8 +16,8 @@ const Hme_Section = () => {
   <h3>Reviews</h3>
   <div className='Rvline'></div>
  </div>
- 
   <div className='flex justify-between w-full Reviews_container '>
+ 
 
       <Reviews/>
       <Reviews/>

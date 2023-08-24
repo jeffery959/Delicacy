@@ -20,13 +20,13 @@
   .Navbar>ul>li{
     color:white;
     position: relative;
-    font-size:clamp(0px,1.5vw, 20px);
+    font-size:clamp(0px,1.2vw, 20px);
   }
 
   .Navbar>ul>.Sign>img{
     color:white;
     position: relative;
-    width:clamp(0px,1.8vw, 25px);
+    width:clamp(0px,2vw, 35px);
   }
   .Navbar>ul>.Sign{
     color:white;
@@ -79,13 +79,24 @@
   }
   
   
-  @media (max-width:450px){
+  @media (max-width:950px){
     .Navbar{
 
-      padding: 20px 15%;
+      padding: 20px 5%;
+    }
+    .Navbar>ul>li{
+      font-size:clamp(0px,2.2vw, 20px);
     }
     .Active{
       border-bottom:2px solid white;
+    }
+    .Navbar>img{
+      width:clamp(2px,30%,150px);
+    }
+    .Navbar>ul>.Sign>img{
+      color:white;
+      position: relative;
+      width:clamp(0px,3vw, 20px);
     }
     
     

@@ -19,7 +19,7 @@
     font-size:clamp(0px,6vw, 100px);
     
     margin-left:15%;
-    @apply  text-white;
+    @apply  text-white z-30;
 }
 .Ratings{
     width:clamp(0px,17%,200px);
