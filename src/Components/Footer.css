@@ -2,7 +2,7 @@ footer{
     background:#DA5353;
     padding:35px 15%;
     margin-top:0px;
-    width:100vw;
+    width:100%;
     @apply flex justify-between  ;
 }
 footer>div{
