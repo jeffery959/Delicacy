@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Orders from '../Components/Orders'
 import Footer from '../Components/Footer'
 const OrderPage = () => {

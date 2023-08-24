@@ -1,4 +1,3 @@
-import React from 'react'
 import "./Location.css"
 import Footer from '../Components/Footer'
 const Location = () => {

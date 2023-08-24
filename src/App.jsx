@@ -1,4 +1,4 @@
-import React ,{ useEffect,memo} from 'react'
+import { useEffect,memo} from 'react'
 import './App.css'
 import { Routes,Route } from 'react-router-dom'
 import Homepage from './Pages/Homepage'
