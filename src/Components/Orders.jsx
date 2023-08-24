@@ -35,11 +35,11 @@ const Orders = () =>
 
 
   const dispatch = useDispatch();
-  const [order,setOrder]=useState('-top-16')
+  const [order,setOrder]=useState('-top-28')
   const triggerModdal=(payload)=>{
     setOrder('top-16')
     setTimeout(()=>{
-      setOrder('-top-16')
+      setOrder('-top-28')
       
     },800)
     if(payload==='green'){
@@ -130,7 +130,7 @@ const SingleOrder=memo(({List,setOrder})=>{
     
   </div>
     
-    <div className='Order_Container_foot flex flex-col '>
+    <div className='Order_Container_foot flex flex-col'>
 
     <p>X{List.SmallList.length} Items</p>
     <div className='Order_Container_foot_text '><p className='text-gray-500'>${List.Total}

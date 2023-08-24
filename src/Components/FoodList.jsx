@@ -20,12 +20,12 @@ const FoodList = ({Menu}) => {
   const dispatch = useDispatch();
   const Filter_tag= useSelector((state) => state.menu.Filter_tag);
 
-  const [order,setOrder]=useState('-top-16')
+  const [order,setOrder]=useState('-top-28')
 const triggerModdal=(item)=>{
   setOrder('top-16')
   dispatch(Add_Order(item))
   setTimeout(()=>{
-    setOrder('-top-16')
+    setOrder('-top-28')
     
   },1500)
 }

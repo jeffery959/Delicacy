@@ -52,13 +52,18 @@
      width:20%;
 }
 
-@media(max-width:800px){
+@media(max-width:950px){
     
     .About_Container>div{
    
         height:clamp(0px,60vh,500px);
        
     
+    }
+    .About{
+    
+        padding: 90px 5%;
+     
     }
 }
 @media(max-width:600px){

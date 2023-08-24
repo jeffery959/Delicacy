@@ -19,9 +19,9 @@
 }
 .Order_Container{
     width: 280px;
-    height:380px;
+    height:clamp(0px,45vh,500px);
     background:#fff;
-    @apply px-3 pt-3   mt-4 rounded-xl mx-2 shadow-xl ;
+    @apply px-3 pt-3   mt-4 rounded-xl mx-2 shadow-xl flex flex-col justify-between ;
 }
 .Order_Container_flex>img{
     width: 50px;
@@ -86,56 +86,60 @@
 
 
 .Order_Div{
-    height:225px;
     margin-bottom:20px;
     scroll-behavior: auto;
+    height:60%;
     @apply overflow-y-auto py-2;
 }
 
-  /* Customize the scrollbar track */
-  .Order_Div::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
-  }
-  
-  /* Customize the scrollbar thumb */
-  .Order_Div::-webkit-scrollbar-thumb {
-    background-color: #888;
-  }
+    /* Reset scrollbar styles to browser defaults */
+    .Order_Div::-webkit-scrollbar-track {
+        background-color: initial;
+      }
+      
+      .Order_Div::-webkit-scrollbar-thumb {
+        background-color: initial;
+      }
+      
+      .Order_Div::-webkit-scrollbar {
+        width: 0px;
+        height: initial;
+      }
+
+
+
+
+@media(max-width:950px){
+
 
   
-  /* Customize the scrollbar width and height */
-  .Order_Div::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  
-
-
-
-
-@media(max-width:850px){
+    .Order>h3{
+        color:#DA5353;
+        font-size:clamp(0px,5.5vw,40px);
+        @apply my-5;
+    
+    }
     .Order_Div{
-        height:65%;
-        @apply   overflow-hidden  ;
+        height:60%;
+        @apply   overflow-auto ;
     }
 
     .Order_Container{
         width: clamp(200px,42%,300px);
-        height:clamp(250px,40vh,500px)
     }
     .Order_Container_flex>img{
-        width: clamp(0px,16%,300px);
-        height: clamp(0px,16%,300px);
+        width: 5vh;
+        height: 5vh;       
  
         
     }
     .Order_Container_flex_txt>p{
-        font-size:clamp(5px,1vw,15px);
+        font-size:clamp(5px,2.5vw,15px);
         color:#797979;
         
     }
     .Order_Container_flex_txt>h3{
-        font-size:clamp(5px,1.2vw,25px);
+        font-size:clamp(5px,3.5vw,25px);
         
         font-weight:600;
     }
@@ -144,19 +148,20 @@
         
         font-weight:600;
         color:#4B4B4B;
-        font-size:clamp(0px,.8vw,15px);
+        font-size:clamp(0px,3vw,15px);
     
     }
    
+    .Order_Container_foot_text>.Payed{
     
-
-    {
+        font-size:clamp(0px,3.5vw,15px);
+        
+    }
+ 
   
-        font-size:15%;
-     }
     .Order_Container_foot_text>button,.Order_Container_foot_text>p{
   
-        font-size:15%;
+        font-size:clamp(0px,3vw,15px);
      }
      
 }

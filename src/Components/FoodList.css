@@ -107,12 +107,6 @@
   @apply mb-2;
 }
 
-@media (max-width: 700px) {
-  .FoodList_items_item {
-    width: clamp(0px, 45%, 300px);
-    height:200px;
-  }
-}
 
 .BigItem {
   height: 60vh;
@@ -206,3 +200,38 @@
   transition-duration: .9s ease-in-out;
 }
 
+@media (max-width: 950px) {
+  .FoodList_items_item {
+    width: clamp(0px, 45%, 300px);
+  
+  }
+  .FoodListNav {
+    padding: 0 5%;
+    @apply flex justify-between items-center;
+  }
+  .FoodListNav > p {
+    font-size: clamp(0px, 2.6vw, 40px);
+  }
+  .FoodList_items {
+    padding: 0 5%;
+    @apply flex justify-between flex-wrap gap-4 mt-10;
+  }
+
+  .FoodList_items_item_txt {
+    font-weight: 500;
+    color: white;
+    width: 90%;
+    font-size: clamp(0px, 1.8vw, 10px);
+    height: 30%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 45%;
+    transition: .5s ease;
+    @apply flex flex-col justify-center mt-2 px-2;
+  }
+  .order {
+    font-size: clamp(0px, 3vw, 20px);
+  }
+  
+  
+}

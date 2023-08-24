@@ -16,8 +16,8 @@ const SingleItem = ({name,price,Description,img,id,item,func})=>{
     return(
 
         <div  className='FoodList_items_item relative flex  ' >
-{
-isLoading?<Loading/>:<>
+
+
 
         <Link to={`/Menu/items/${id}` } >
         <img src={img} loading='lazy'/>
@@ -37,9 +37,8 @@ isLoading?<Loading/>:<>
       
       </div>
       <button className='order z-10 '  onClick={()=>func(item)}>Order</button>
-      </>
-      
-}
+     
+
     
       </div>
     );

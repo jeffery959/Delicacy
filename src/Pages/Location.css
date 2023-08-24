@@ -1,15 +1,34 @@
 .Location{
     padding:0 15%;
     height:90vh;
-    @apply flex flex-col items-center justify-evenly mt-28;
+    @apply flex flex-col items-center justify-evenly my-28 ;
 }
 .Location>h3{
     color:#DA5353;
-    font-size:clamp(0px,3vw,40px)
+    font-size:clamp(0px,3vw,40px);
+    @apply mb-4;
 }
 
 .Map{
     width:100%;
-    height:70vh;
-    @apply rounded-2xl;
+    height:100%;
+    @apply rounded-2xl my-28;
+}
+
+@media (max-width:950px){
+
+    .Location{
+        padding:0 5%;
+        height:80vh;
+
+        @apply flex flex-col items-center justify-between  mt-28  ; 
+    }
+    
+    .Location>h3{
+        color:#DA5353;
+        font-size:clamp(0px,5.5vw,40px)
+    }
+  
+    
+
 }

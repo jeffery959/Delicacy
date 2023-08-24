@@ -82,7 +82,7 @@
   @media (max-width:950px){
     .Navbar{
 
-      padding: 20px 5%;
+      padding: 3vh 5%;
     }
     .Navbar>ul>li{
       font-size:clamp(0px,2.2vw, 20px);
