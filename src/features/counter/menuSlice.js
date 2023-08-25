@@ -11,6 +11,8 @@ const data = [
       Categories: "Lunch", 
       count: 1,
       special:false,
+      
+      Blurhash:"L8FqjtET03=]0yIVE2$$03-:~AIq",
       ingredients:[
   
         {tooltip:"Bun",Img:"/Images/bun.jpg"},
@@ -36,6 +38,7 @@ const data = [
       Categories: "Lunch", 
       count: 1,
       special:false,
+      Blurhash:"L2F}y6J$000LTz-m=_Dj00D*0jVs",
       ingredients:[
         {tooltip:"Dough",Img:"/Images/Dough.jpg"},
         {tooltip:"Tomatoe-Sauce",Img:"/Images/Tomatoe-Sauce.jpg"},
@@ -53,6 +56,7 @@ const data = [
       Categories: "Breakfast", 
       count: 1,
       special:false,
+      Blurhash:"LDHn]LE22z?H00s:nzM{03xu;JNG",
       ingredients:[
         {tooltip:"Flour",Img:"/Images/Flour.jpg"},
         {tooltip:"Eggs",Img:"/Images/Eggs.jpg"},
@@ -71,6 +75,7 @@ const data = [
       Categories: "Breakfast", 
       count: 1,
       special:false,
+      Blurhash:"LKI59}~pRnXUsmD%?bxaR.Io?GIU",
       ingredients:[
         {tooltip:"Bread",Img:"/Images/Bread.jpg"},
         {tooltip:"Eggs",Img:"/Images/Eggs.jpg"},
@@ -90,6 +95,7 @@ const data = [
       Categories: "Dinner",    
       count: 1,
       special:true,
+      Blurhash:"LDDRmAwJ0NWUNaIqkBxX0jWV}qR*",
       ingredients:[
         {tooltip:"Ribs",Img:"/Images/Ribs_2.jpg"},
         {tooltip:"DryRub",Img:"/Images/DryRub.jpg"},
@@ -107,6 +113,7 @@ const data = [
       Categories: "Dinner", 
       count: 1,
       special:false,
+      Blurhash:"LgHn{OsjSin$?wR+oLWDx_NHoeWp",
       ingredients:[
         {tooltip:"Spaghetti",Img:"/Images/Spaghetti_2.jpg"},
         {tooltip:"Tomatoe-Sauce",Img:"/Images/Tomatoe-Sauce.jpg"},
@@ -124,6 +131,7 @@ const data = [
       Categories: "Dinner", 
       count: 1,
       special:false,
+      Blurhash:"L5GHbot:0000+~=_WSyD0M9Fd;s=",
       ingredients:[
         {tooltip:"Steak",Img:"/Images/Steak_2.jpg"},
         {tooltip:"Salt",Img:"/Images/Salt.jpg"},
@@ -142,6 +150,7 @@ const data = [
       Categories: "Lunch", 
       count: 1,
       special:false,
+      Blurhash:"LJK^$n-pVicu?^E2i]WpL3k=oyVs",
       ingredients:[
         
         {tooltip:"Tomatoes",Img:"/Images/Tomatoes.jpg"},
@@ -161,6 +170,7 @@ const data = [
       Categories: "Breakfast", 
       count: 1,
       special:false,
+      Blurhash:"LIIX:HMx-O^+k?JVyYE1D*I9~q-;",
       ingredients:[
   
         {tooltip:"Flour",Img:"/Images/Flour.jpg"},
@@ -207,9 +217,14 @@ const data = [
         Categories: "Lunch", 
         count: 1,
         special:false,
-        ingredients:{
-    
-        }
+        Blurhash:"L2F}y6J$000LTz-m=_Dj00D*0jVs",
+        ingredients:[
+          {tooltip:"Dough",Img:"/Images/Dough.jpg"},
+          {tooltip:"Tomatoe-Sauce",Img:"/Images/Tomatoe-Sauce.jpg"},
+          {tooltip:"Pepperoni",Img:"/Images/Pepperoni.jpg"},
+          {tooltip:"Garlic",Img:"/Images/Garlic.jpg"},
+          {tooltip:"Cheese",Img:"/Images/Cheese.jpg"},
+        ]
       },
       {
         id: 2,
@@ -220,23 +235,36 @@ const data = [
         Categories: "Breakfast", 
         count: 1,
         special:false,
-        ingredients:{
-    
-        }
+        Blurhash:"LDHn]LE22z?H00s:nzM{03xu;JNG",
+        ingredients:[
+          {tooltip:"Flour",Img:"/Images/Flour.jpg"},
+          {tooltip:"Eggs",Img:"/Images/Eggs.jpg"},
+          {tooltip:"Milk",Img:"/Images/Milk.jpg"},
+          {tooltip:"BakingPowder",Img:"/Images/BakingPowder.jpg"},
+          {tooltip:"Salt",Img:"/Images/Salt.jpg"},
+          
+        ]
       },
       {
         id: 3,
-        name: 'BreadEggs',
+        name: 'Bread and Eggs',
         price: 12.84,
         Description: "Bread and Eggs with your side dish toast and fry.",
         img: "/Images/BreadnEgg.jpg",
         Categories: "Breakfast", 
         count: 1,
         special:false,
-        ingredients:{
-    
-        }
-      },
+        Blurhash:"LKI59}~pRnXUsmD%?bxaR.Io?GIU",
+        ingredients:[
+          {tooltip:"Bread",Img:"/Images/Bread.jpg"},
+          {tooltip:"Eggs",Img:"/Images/Eggs.jpg"},
+          {tooltip:"Salt",Img:"/Images/Salt.jpg"},
+          {tooltip:"Milk",Img:"/Images/Milk.jpg"},
+          {tooltip:"Butter",Img:"/Images/Butter.jpg"},
+          
+          
+        ]
+      }
   
     ],
     OrderList: jsonData,

@@ -1,4 +1,4 @@
-import {useState,useEffect,memo} from 'react'
+import {useState,memo} from 'react'
 import "./Order.css"
 import { useSelector,useDispatch } from 'react-redux'
 import CloseIcon from '@mui/icons-material/Close';
@@ -50,11 +50,7 @@ const Orders = () =>
   const OrderList= useSelector((state) => state.menu.OrderList);
   
   
-  const [loading,setLoading]=useState(true)
-  useEffect(()=>{
-    setTimeout(()=>{setLoading(false)},1000)
-  },[]) 
-  
+
   return (
     <div className='Order'>
      

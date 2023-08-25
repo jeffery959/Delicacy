@@ -74,7 +74,8 @@ export const SingularityUse = ({Menu,func}) => {
          <React.Fragment key={item.id} > 
          <Suspense fallback={<Loading/>}>
        {item.special?
-       <SingBigItem {...item} />
+       
+       <SingBigItem {...item} item={item} />
        
        :
        <SingleItem {...item} item={item} func={func}/>
