@@ -1,9 +1,9 @@
-import React,{useState} from 'react'
+import {useState} from 'react'
 import './Register_form.css'
 import { useDispatch } from "react-redux"
-import { OpenSignmodal,LogInSuccess } from "../features/counter/signInSlice"
+import { OpenSignmodal } from "../features/counter/signInSlice"
 import axios from 'axios'
-import {extractBearerToken,makeAuthenticatedRequest} from '../App'
+import {makeAuthenticatedRequest} from '../App'
 import { IconButton } from '@mui/material'
 
 const Register_form = () => {

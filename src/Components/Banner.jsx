@@ -1,7 +1,6 @@
-import React from 'react'
+
 import './Banner.css'
 import { FaStar } from 'react-icons/fa'
-import Hme_Section from './Hme_Section'
 const Banner = () => {
   return (
     <section className='Banner'>

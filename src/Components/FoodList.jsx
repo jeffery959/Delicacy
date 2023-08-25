@@ -1,4 +1,4 @@
-import React,{ Suspense, lazy, memo,useState,useEffect}from 'react'
+import React,{ Suspense, lazy,useState}from 'react'
 
 import { Add_Order} from '../features/counter/menuSlice'
 import "./FoodList.css"
@@ -17,15 +17,7 @@ import('./Single_Item').then(module => ({ default: module.SingBigItem }))
 
 
 const FoodList = ({Menu}) => {
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-      // Simulating loading delay for demonstration
-      const timer = setTimeout(() => {
-        setIsLoading(false);
-      }, 2000);
-  
-      return () => clearTimeout(timer);
-    }, []);
+
   const dispatch = useDispatch();
   const Filter_tag= useSelector((state) => state.menu.Filter_tag);
 
@@ -46,10 +38,9 @@ const triggerModdal=(item)=>{
    <p>{Filter_tag}</p>
    <div className='Line'></div>
    </section>
-   {
-    isLoading?<Loading/>:
+  
    <SingularityUse Menu={Menu} func={triggerModdal}/>
-   }
+   
 
 
      <Modal order={order}/>

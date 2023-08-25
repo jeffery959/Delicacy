@@ -1,7 +1,6 @@
 import "./SignIn.css"
-import React from 'react'
 import { useDispatch ,useSelector} from "react-redux"
-import { OpenSignmodal,LogInSuccess, LogOut } from "../features/counter/signInSlice"
+import { OpenSignmodal, LogOut } from "../features/counter/signInSlice"
 
 const SignIn = () => {
   const dispatch = useDispatch()

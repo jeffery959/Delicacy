@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import {useState} from 'react'
 import './Register_form.css'
 import { useDispatch } from "react-redux"
 import { OpenSignmodal } from "../features/counter/signInSlice"

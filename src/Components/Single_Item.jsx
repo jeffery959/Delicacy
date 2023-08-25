@@ -1,16 +1,8 @@
-import React, { useState, useEffect } from 'react';
+
 import { Link } from 'react-router-dom'
 
 const SingleItem = ({name,price,Description,img,id,item,func})=>{
-    const [isLoading, setIsLoading] = useState(true);
-    useEffect(() => {
-        // Simulating loading delay for demonstration
-        const timer = setTimeout(() => {
-          setIsLoading(false);
-        }, 5000);
-    
-        return () => clearTimeout(timer);
-      }, []);
+  
  
     return(
 
