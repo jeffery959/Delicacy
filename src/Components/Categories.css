@@ -20,7 +20,7 @@
  font-size:clamp(0px,3vw,40px)
     }
 
-    @media(max-width:950px){
+    @media(max-width:850px){
       .Categories{
         padding:0 5%;
         @apply flex  flex-col  mt-32  items-center ;
@@ -29,7 +29,7 @@
 
      
       .Categories>ul>*{
-    font-size:clamp(5px,2.5vw,20px);
+    font-size:clamp(5px,2.5vw,15px);
     color:#DA5353;
   @apply cursor-pointer;
 }

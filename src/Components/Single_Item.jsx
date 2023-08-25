@@ -19,8 +19,25 @@ const SingleItem = ({name,price,Description,img,id,item,func})=>{
 
 
         <Link to={`/Menu/items/${id}` } >
-        <img src={img} loading='lazy'/>
-     
+          
+              
+
+        <img src={img} role='presentation' 
+        srcSet={`      
+        
+        ${img}?width=100 100w,
+        ${img}?width=200 200w,
+        ${img}?width=400 400w,
+        ${img}?width=800 800w,  
+        ${img}?width=1000 1000w,  
+        
+        `}  sizes='(max-with:80px) 100vw, 50vw' 
+        
+        decoding='async'
+        fetchpriority="high"
+        
+        />
+    
         </Link>
     
         

@@ -26,7 +26,7 @@
   .Navbar>ul>.Sign>img{
     color:white;
     position: relative;
-    width:clamp(0px,2vw, 35px);
+    width:clamp(0px,2vw, 20px);
   }
   .Navbar>ul>.Sign{
     color:white;
@@ -70,7 +70,7 @@
       transition: width 0.3s;
     }
     .Active{
-      border-bottom:3px solid white;
+      border-bottom:2px solid white;
       }
       .Navbar>ul>*:hover::before {
         width: 0%; /* Make the underline extend to 100% on hover */
@@ -79,24 +79,22 @@
   }
   
   
-  @media (max-width:950px){
+  @media (max-width:850px){
     .Navbar{
 
       padding: 3vh 5%;
     }
     .Navbar>ul>li{
-      font-size:clamp(0px,2.2vw, 20px);
+      font-size:clamp(0px,2.2vw, 15px);
     }
-    .Active{
-      border-bottom:2px solid white;
-    }
+   
     .Navbar>img{
-      width:clamp(2px,30%,150px);
+      width:clamp(2px,30%,100px);
     }
     .Navbar>ul>.Sign>img{
       color:white;
       position: relative;
-      width:clamp(0px,3vw, 20px);
+      width:clamp(0px,3vw, 18px);
     }
     
     

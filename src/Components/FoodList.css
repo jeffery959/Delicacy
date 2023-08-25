@@ -41,8 +41,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 250px;
+  height: 320px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;  
@@ -200,7 +200,8 @@
   transition-duration: .9s ease-in-out;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 850px) {
+ 
   .FoodList_items_item {
     width: clamp(0px, 45%, 300px);
   
@@ -210,7 +211,7 @@
     @apply flex justify-between items-center;
   }
   .FoodListNav > p {
-    font-size: clamp(0px, 2.6vw, 40px);
+    font-size: clamp(0px, 2.6vw,15px);
   }
   .FoodList_items {
     padding: 0 5%;

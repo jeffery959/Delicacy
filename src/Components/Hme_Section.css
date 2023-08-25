@@ -62,7 +62,7 @@
 }
 .Before_contact{
     padding:5% 15%;
-    margin-bottom:30%;
+    margin-bottom:5%;
     @apply w-full ;
 }
 .Contact_Icons{
@@ -93,7 +93,7 @@
 } */
 
 
-@media (max-width:900px){
+@media (max-width:850px){
     .Reviews_Card>.txt>h3{
         font-weight:600;
         font-size:clamp(0px,2vw,15px)
