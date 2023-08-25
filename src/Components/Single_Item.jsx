@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
-import Loading from '../Pages/Loading';
 
 const SingleItem = ({name,price,Description,img,id,item,func})=>{
     const [isLoading, setIsLoading] = useState(true);
@@ -46,20 +45,12 @@ const SingleItem = ({name,price,Description,img,id,item,func})=>{
   
   
   const SingBigItem =({name,price,Description,img,id})=>{
-    const [isLoading, setIsLoading] = useState(true);
-    useEffect(() => {
-        // Simulating loading delay for demonstration
-        const timer = setTimeout(() => {
-          setIsLoading(false);
-        }, 5000);
-    
-        return () => clearTimeout(timer);
-      }, []);
+ 
 
     return (
 
         <Link  to={`/Menu/items/${id}` }  className='BigItem p-3'>
-        {isLoading?<Loading/>:
+        
 
             
         <div className='BigItem_img px-14 py-5' style={{backgroundImage: `url(${img})`}}>
@@ -80,7 +71,7 @@ const SingleItem = ({name,price,Description,img,id,item,func})=>{
        </div>
        </div>
        
-    }
+    
        </Link>
     )
   }
