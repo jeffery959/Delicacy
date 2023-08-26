@@ -1,12 +1,20 @@
 import { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import {Blurhash} from 'react-blurhash'
+import { useSelector,useDispatch } from 'react-redux';
+import { Loading } from '../features/counter/menuSlice';
 const SingleItem = ({name,price,Description,img,id,item,func})=>{
   
  const [imageLoaded,setImageLoaded]=useState(false)
 const [opacity,setOpacity]=useState("opacity-0")
- useEffect(()=>{
-    const image = new Image()
+const Load = useSelector((state)=>state.menu.Loaded)
+const dispatch = useDispatch()
+const handleDOMContentLoaded = () => {
+
+  const image = new Image()
+  if(!Load){
+
+    dispatch(Loading())
     image.onload=()=>{
       setTimeout(()=>{
         setImageLoaded(true)
@@ -16,13 +24,37 @@ const [opacity,setOpacity]=useState("opacity-0")
         
         if(opacity=="opacity-0"){
           setOpacity("opacity-100")
-  
+          
         }
         
-      },6000)
+      },5000)
     }
-image.src = img
- })
+    
+    image.src = img
+  }else{
+    
+    setImageLoaded(true)
+    image.onload=()=>{
+    setTimeout(()=>{
+      
+      if(opacity=="opacity-0"){
+        setOpacity("opacity-100")
+        
+      }
+      
+    },500)}
+    image.src = img
+  
+  }
+  
+};
+ useEffect(()=>{
+ 
+
+ handleDOMContentLoaded()
+  
+
+ },[])
     return(
 
         <div  className='FoodList_items_item relative flex overflow-hidden ' >
@@ -56,7 +88,6 @@ punch={1}/>
         
         `}  sizes='(max-with:80px) 100vw, 50vw' 
         alt='Image'
-        
          
         />}
       
@@ -98,7 +129,7 @@ punch={1}/>
          },4000)
        }
    image.src = img
-    },[img])
+    },[])
     return (
 
 

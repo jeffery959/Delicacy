@@ -270,7 +270,8 @@ const data = [
     OrderList: jsonData,
 
     
-   New:newData
+   New:newData,
+   Loaded:false
   
   }
   
@@ -399,9 +400,12 @@ const menuSlice = createSlice({
      state.New=true 
 
     },
+    Loading:(state)=>{
+      state.Loaded=true
+    }
   }
 });
 
-export const { Filter,Add_Order,Payment,RemoveOne } = menuSlice.actions;
+export const { Filter,Add_Order,Payment,RemoveOne ,Loading} = menuSlice.actions;
 
 export default menuSlice.reducer;
