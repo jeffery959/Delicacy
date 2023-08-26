@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react';
+import {useRef,useState,useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import {Blurhash} from 'react-blurhash'
 import { useSelector,useDispatch } from 'react-redux';
@@ -9,14 +9,12 @@ const SingleItem = ({name,price,Description,img,id,item,func})=>{
 const [opacity,setOpacity]=useState("opacity-0")
 const Load = useSelector((state)=>state.menu.Loaded)
 const dispatch = useDispatch()
+const itemRef = useRef(null);
+const [isVisible, setIsVisible] = useState(false);
 const handleDOMContentLoaded = () => {
   const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
 
-if (isMobile) {
-  console.log("You are on a mobile device.");
-} else {
-  console.log("You are not on a mobile device.");
-}
+
 
 
   const image = new Image()
@@ -38,7 +36,7 @@ if (isMobile) {
           
         }
         
-      },8000)}else{
+      },9000)}else{
       setTimeout(()=>{
         
         if(opacity=="opacity-0"){
@@ -46,7 +44,7 @@ if (isMobile) {
           
         }
         
-      },5000)}
+      },4000)}
       
     }
     
@@ -65,7 +63,7 @@ if (isMobile) {
             
           }
           
-        },1400)}
+        },1000)}
         else{
           setTimeout(()=>{
             
@@ -74,7 +72,7 @@ if (isMobile) {
               
             }
             
-          },500)}
+          },200)}
           
       }
     image.src = img
@@ -82,16 +80,41 @@ if (isMobile) {
   }
   
 };
- useEffect(()=>{
+ 
+const checkVisibility = () => {
+  if (itemRef.current) {
+    const { top, bottom } = itemRef.current.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (top < windowHeight && bottom > 0) {
+      setIsVisible(true);
+      handleDOMContentLoaded()
+      
  
 
- handleDOMContentLoaded()
-  
+    } else {
+      
+    }
+  }
+};
+useEffect(() => {
+  // Initial visibility check
+  checkVisibility();
 
- },[])
+  // Attach scroll event listener to check visibility when scrolling
+  window.addEventListener('scroll', checkVisibility);
+
+  // Cleanup the event listener when the component unmounts
+  return () => {
+    window.removeEventListener('scroll', checkVisibility);
+  };
+}, []);
+
+
+
     return(
 
-        <div  className='FoodList_items_item relative flex overflow-hidden ' >
+        <div  ref={itemRef} className='FoodList_items_item relative flex overflow-hidden ' >
 
 
 
@@ -122,6 +145,7 @@ punch={1}/>
         
         `}  sizes='(max-with:80px) 100vw, 50vw' 
         alt='Image'
+       
          
         />}
       
@@ -150,25 +174,117 @@ punch={1}/>
   
   
   const SingBigItem =({img,id,item})=>{
+    const dispatch = useDispatch()
+    
+const [opacity,setOpacity]=useState("opacity-0")
+const Load = useSelector((state)=>state.menu.Loaded)
+    const [imageLoaded,setImageLoaded]=useState(false)
+    const itemRef = useRef(null);
+const [isVisible, setIsVisible] = useState(false);
+const handleDOMContentLoaded = () => {
+  const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+
+
+  const image = new Image()
+  if(!Load){
+
+    dispatch(Loading())
+    image.onload=()=>{
+      setTimeout(()=>{
+        setImageLoaded(true)
+        
+      },4000)
+
+      if (isMobile) {
+      
+      setTimeout(()=>{
+        
+        if(opacity=="opacity-0"){
+          setOpacity("opacity-100")
+          
+        }
+        
+      },9000)}else{
+      setTimeout(()=>{
+        
+        if(opacity=="opacity-0"){
+          setOpacity("opacity-100")
+          
+        }
+        
+      },4000)}
+      
+    }
+    
+    image.src = img
+  }else{
+
+    
+    setImageLoaded(true)
+    image.onload=()=>{
+      if(isMobile){
+
+        setTimeout(()=>{
+          
+          if(opacity=="opacity-0"){
+            setOpacity("opacity-100")
+            
+          }
+          
+        },1000)}
+        else{
+          setTimeout(()=>{
+            
+            if(opacity=="opacity-0"){
+              setOpacity("opacity-100")
+              
+            }
+            
+          },200)}
+          
+      }
+    image.src = img
+  
+  }
+  
+};
+ 
+const checkVisibility = () => {
+  if (itemRef.current) {
+    const { top, bottom } = itemRef.current.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (top < windowHeight && bottom > 0) {
+      setIsVisible(true);
+      handleDOMContentLoaded()
+      
  
 
-    const [imageLoaded,setImageLoaded]=useState(false)
+    } else {
+      
+    }
+  }
+};
+useEffect(() => {
+  // Initial visibility check
+  checkVisibility();
 
-    useEffect(()=>{
-       const image = new Image()
-       image.onload=()=>{
-         setTimeout(()=>{
+  // Attach scroll event listener to check visibility when scrolling
+  window.addEventListener('scroll', checkVisibility);
+
+  // Cleanup the event listener when the component unmounts
+  return () => {
+    window.removeEventListener('scroll', checkVisibility);
+  };
+}, []);
+  
    
-           setImageLoaded(true)
-         },4000)
-       }
-   image.src = img
-    },[])
+ 
     return (
 
 
 
-        <Link  to={`/Menu/items/${id}` }  className='BigItem p-3 overflow-hidden'>
+        <Link  to={`/Menu/items/${id}` } ref={itemRef}  className='BigItem p-3 overflow-hidden'>
           {!imageLoaded&&(
 <Blurhash
 hash={item.Blurhash}
@@ -201,6 +317,7 @@ punch={1}/>
 
 )}
       
+
         
 
             
@@ -212,4 +329,6 @@ punch={1}/>
   }
 
 
+
+  
   export {SingBigItem,SingleItem}

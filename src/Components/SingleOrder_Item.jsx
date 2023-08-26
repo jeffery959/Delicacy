@@ -6,7 +6,10 @@ import { useDispatch } from 'react-redux'
 const SingleOrder_Item=({Item,Payed})=>{
   
   const dispatch = useDispatch()
-    return(
+  
+  
+  
+  return(
       <div className='SingleOrder_Item '>
   
       <img src={Item.img}alt="" loading="lazy"/>
