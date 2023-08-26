@@ -38,7 +38,7 @@ if (isMobile) {
           
         }
         
-      },7000)}else{
+      },8000)}else{
       setTimeout(()=>{
         
         if(opacity=="opacity-0"){
@@ -65,7 +65,7 @@ if (isMobile) {
             
           }
           
-        },900)}
+        },1400)}
         else{
           setTimeout(()=>{
             
