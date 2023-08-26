@@ -12,7 +12,7 @@
     margin:2px 0px;
 }
 .SignIn>button,.SignIn>p{
-    font-size:clamp(0px,2vw,12px);
+    font-size:clamp(0px,4vw,12px);
     height:clamp(15px,2vw,62px);
     font-weight:700;
     @apply  duration-700 text-center text-gray-600 flex justify-center items-center ;

@@ -10,6 +10,14 @@ const [opacity,setOpacity]=useState("opacity-0")
 const Load = useSelector((state)=>state.menu.Loaded)
 const dispatch = useDispatch()
 const handleDOMContentLoaded = () => {
+  const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+
+if (isMobile) {
+  console.log("You are on a mobile device.");
+} else {
+  console.log("You are not on a mobile device.");
+}
+
 
   const image = new Image()
   if(!Load){
@@ -20,6 +28,9 @@ const handleDOMContentLoaded = () => {
         setImageLoaded(true)
         
       },4000)
+
+      if (isMobile) {
+      
       setTimeout(()=>{
         
         if(opacity=="opacity-0"){
@@ -27,22 +38,45 @@ const handleDOMContentLoaded = () => {
           
         }
         
-      },5000)
+      },7700)}else{
+      setTimeout(()=>{
+        
+        if(opacity=="opacity-0"){
+          setOpacity("opacity-100")
+          
+        }
+        
+      },5000)}
+      
     }
     
     image.src = img
   }else{
+
     
     setImageLoaded(true)
     image.onload=()=>{
-    setTimeout(()=>{
-      
-      if(opacity=="opacity-0"){
-        setOpacity("opacity-100")
-        
+      if(isMobile){
+
+        setTimeout(()=>{
+          
+          if(opacity=="opacity-0"){
+            setOpacity("opacity-100")
+            
+          }
+          
+        },1500)}
+        else{
+          setTimeout(()=>{
+            
+            if(opacity=="opacity-0"){
+              setOpacity("opacity-100")
+              
+            }
+            
+          },500)}
+          
       }
-      
-    },500)}
     image.src = img
   
   }

@@ -5,8 +5,8 @@
     left:50%;
     transform: translateX(-50%);
     background:white;
-    width:clamp(50px,25vw,250px);
-    height:clamp(50px,25vw,250px);
+    width:250px;
+    height:300px;
     @apply flex flex-col items-center py-2 justify-between  rounded-lg shadow-lg ;
 }
 .Register_form>div{
@@ -15,13 +15,13 @@
 }
 .Register_form>div>input{
   
-    font-size:clamp(0px,1.2vw,15px);
+    font-size:clamp(0px,5vw,15px);
     width:100%;
     margin-bottom:5%;
 }
 .Register_form>div>button{
   
-    font-size:clamp(0px,1.2vw,15px);
+    font-size:clamp(0px,5vw,15px);
     width:100%;
     margin-bottom:5%;
     background:#DA5353;
@@ -34,7 +34,7 @@
    background:#E96464;
 }
 .Cls_Bck_btns>h3{
-   font-size:clamp(0px,1.8vw,20px);
+   font-size:clamp(0px,5vw,20px);
    font-weight:600;
    
 }
@@ -45,10 +45,11 @@
 
 }
 .singleDecks>p {
-    font-size:clamp(0px,1vw,10px);
+   font-weight:600;
+    font-size:clamp(0px,3.5vw,12px);
 }
 .Mng_Acct{
-    font-size:clamp(0px,1.2vw,10px);
+    font-size:clamp(0px,3.5vw,10px);
     
     
     @apply  w-full ;
@@ -59,8 +60,8 @@ margin-bottom:15%;
 @apply  flex justify-between  w-full items-center 
 }
 .Cls_Bck_btns>.Icon>img{
-width:clamp(0px,1.2vw,10px); 
-height:clamp(0px,1.2vw,10px);
+width:clamp(0px,3.5vw,10px); 
+height:clamp(0px,3.5vw,10px);
 
 }
 .Mng_Acct>p{
@@ -82,30 +83,6 @@ height:clamp(0px,1.2vw,10px);
 }
 .singleDecks>img {
     margin-right:20%;
-    width:10%;
+    width:clamp(0px,15%,20px);
 }
 
-@media(max-width:600px){
-    .Cls_Bck_btns{
-         
-        @apply  flex justify-between  w-full items-center 
-        }
-    .Mng_Acct{
-        font-size:clamp(0px,.8vw,10px);     
-    
-    
-    }
-    .Register_form{
-      
-    height:clamp(50px,35vw,300px);
-        @apply py-1 ;
-    }
-    .singleDecks>p {
-        font-size:clamp(0px,.8vw,10px);
-    }
-    .singleDecks>img {
-      width:8%;
-    @apply mr-2;
-    }
-
-}
