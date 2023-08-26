@@ -186,87 +186,56 @@ const Load = useSelector((state)=>state.menu.Loaded)
     const itemRef = useRef(null);
 const [isVisible, setIsVisible] = useState(false);
 const handleDOMContentLoaded = () => {
-  const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+ 
 
+  const image = new Image();
+  image.src = `${img}?width=1000`;
+  image.decoding = 'sync';
+  image.fetchpriority = 'high';
 
-  const image = new Image()
-  if(!Load){
-
-    dispatch(Loading())
-    image.onload=()=>{
-      setTimeout(()=>{
+  
+ 
+    image.onload = () => {
+      if (itemRef.current) {
+        itemRef.current.style.backgroundImage = `url('${img}?width=1000')`;
+      }
+      console.log("hello")
+      console.log(imageLoaded)
+  
+      
+     
+          setTimeout(()=>{
         setImageLoaded(true)
         
-      },4000)
-
-      if (isMobile) {
-      
-      setTimeout(()=>{
-        
         if(opacity=="opacity-0"){
           setOpacity("opacity-100")
           
         }
         
-      },9000)}else{
-      setTimeout(()=>{
-        
-        if(opacity=="opacity-0"){
-          setOpacity("opacity-100")
-          
-        }
-        
-      },4000)}
+      },2500)
+    
       
-    }
     
-    image.src = img
-  }else{
-
     
-    setImageLoaded(true)
-    image.onload=()=>{
-      if(isMobile){
-
-        setTimeout(()=>{
-          
-          if(opacity=="opacity-0"){
-            setOpacity("opacity-100")
-            
-          }
-          
-        },1000)}
-        else{
-          setTimeout(()=>{
-            
-            if(opacity=="opacity-0"){
-              setOpacity("opacity-100")
-              
-            }
-            
-          },200)}
-          
-      }
-    image.src = img
+  
   
   }
   
 };
  
 const checkVisibility = () => {
+  if(!Load){
+
+    handleDOMContentLoaded()
+  }
   if (itemRef.current) {
     const { top, bottom } = itemRef.current.getBoundingClientRect();
     const windowHeight = window.innerHeight;
-
     if (top < windowHeight && bottom > 0) {
-      setIsVisible(true);
-      handleDOMContentLoaded()
-      
- 
-
-    } else {
-      
-    }
+    handleDOMContentLoaded()
+      console.log("working")
+      setIsVisible(true);}
+     
   }
 };
 useEffect(() => {
@@ -282,13 +251,14 @@ useEffect(() => {
   };
 }, []);
   
+
    
  
     return (
 
 
 
-        <Link  to={`/Menu/items/${id}` } ref={itemRef}  className='BigItem p-3 overflow-hidden'>
+        <Link  to={`/Menu/items/${id}` }   className='BigItem p-3 overflow-hidden'>
           {!imageLoaded&&(
 <Blurhash
 hash={item.Blurhash}
@@ -299,7 +269,7 @@ resolutionY={32}
 punch={1}/>
 
 )}{imageLoaded&&(
-  <div className='BigItem_img px-14 py-5 ' style={{backgroundImage: `url(${img})`}}>
+  <div className={`BigItem_img duration-1000  px-14 py-5 ${opacity}`} ref={itemRef}>
       
   <div className='Htitle'>
   <div className='HR-Line'></div>
