@@ -11,21 +11,22 @@ const Load = useSelector((state)=>state.menu.Loaded)
 const dispatch = useDispatch()
 const itemRef = useRef(null);
 const [isVisible, setIsVisible] = useState(false);
-const handleDOMContentLoaded = () => {
+const handleDOMContentLoaded =() => {
   const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
 
 
 
 
-  const image = new Image()
+  const  image =  new Image()
   if(!Load){
 
     dispatch(Loading())
+    
     image.onload=()=>{
-      setTimeout(()=>{
+   
         setImageLoaded(true)
         
-      },4000)
+   
 
       if (isMobile) {
       
@@ -36,7 +37,7 @@ const handleDOMContentLoaded = () => {
           
         }
         
-      },9000)}else{
+      },10000)}else{
       setTimeout(()=>{
         
         if(opacity=="opacity-0"){
@@ -44,7 +45,7 @@ const handleDOMContentLoaded = () => {
           
         }
         
-      },4000)}
+      },7000)}
       
     }
     
@@ -63,7 +64,7 @@ const handleDOMContentLoaded = () => {
             
           }
           
-        },1000)}
+        },1500)}
         else{
           setTimeout(()=>{
             
@@ -72,7 +73,7 @@ const handleDOMContentLoaded = () => {
               
             }
             
-          },200)}
+          },500)}
           
       }
     image.src = img
@@ -145,6 +146,9 @@ punch={1}/>
         
         `}  sizes='(max-with:80px) 100vw, 50vw' 
         alt='Image'
+        fetchpriority="high"
+        decoding='sync'
+        
        
          
         />}

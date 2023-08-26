@@ -5,3 +5,6 @@
     font-size:clamp(0px,2.5vw,15px);
     @apply ml-3;
 }
+img {
+    transform: translate3d(0, 0, 0);
+  }
